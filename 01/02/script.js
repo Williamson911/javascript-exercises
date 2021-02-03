@@ -10,5 +10,8 @@
 // You will have time to focus on it later.
 
 
+{
+    var userName = prompt('Your name');
+    alert(`Hello${userName}`);
 
-alert('Hello World!')
+}
