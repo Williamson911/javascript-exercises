@@ -9,6 +9,14 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
+(function() {
 
+    var cake = prompt("Do you want more cake?");
 
-alert('Hello World!')
+    if (cake == "Yes") {
+        window.alert("Congratulations! Here's some cake!")
+    } else {
+        window.alert("More cake for me then :p !")
+    }
+
+})();

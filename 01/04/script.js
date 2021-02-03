@@ -9,6 +9,16 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
+(function() {
+    var age = prompt("Age?");
+    var gender = prompt("Gender?");
+    var town = prompt("Town?");
+    var x = confirm(`Is it correct? You are ${age}, you are a ${gender}, you live in ${town}.`);
+    if (x == true) {
+        window.alert("Ok!")
+    } else {
+        location.reload()
+    }
 
 
-alert('Hello World!')
+})();
