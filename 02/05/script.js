@@ -14,10 +14,14 @@
     document.getElementById("run").addEventListener("click", function() {
 
         // your code here
-        var numbers = document.getElementById("numbers").value;
-        numbers = numbers.split(',').sort((a, b) => a - b)
-        alert(numbers);
-
+        var nb = document.getElementById("number").value;
+        var i = 1;
+        var res = 1;
+        while (i <= nb) {
+            res = res * i;
+            i++;
+        }
+        alert("la factorielle de " + nb + " : " + res);
     });
 
 })();
