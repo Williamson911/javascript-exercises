@@ -11,6 +11,21 @@
 
 (function() {
 
-    // your code here
+    document.getElementById("run").addEventListener("click", function() {
 
+        let today = new Date();
+        let todayDay = today.getDate();
+        let todayMonth = today.getMonth() + 1;
+        let day = document.getElementById("dob-day").value;
+        let month = document.getElementById("dob-month").value;
+        let year = document.getElementById("dob-year").value;
+        let age = today.getFullYear() - year;
+
+        if (day <= todayDay && month <= todayMonth) {
+            alert(age);
+        } else {
+            alert(age - 1);
+        }
+
+    });
 })();
