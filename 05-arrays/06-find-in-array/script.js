@@ -11,8 +11,7 @@
 
 (function() {
 
-    const people = [
-        {
+    const people = [{
             firstname: "Bradford",
             lastname: "Coldbath",
             email: "bcoldbath0@wired.com",
@@ -89,6 +88,9 @@
         },
     ];
 
-    // your code here
+    people.forEach(function(people, index, people) {
+        if (people[index].firstname == "Jean" && people[index].lastname == "Dupont")
+            console.log(people[index].email, index);
+    });
 
 })();
