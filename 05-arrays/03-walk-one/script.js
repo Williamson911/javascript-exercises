@@ -26,8 +26,12 @@
         "cherry",
     ];
 
-    fruits.forEach(function(item, index, array) {
-        console.log(item, index);
+    document.getElementById("run").addEventListener("click", function() {
+
+        for (let a of fruits) {
+            console.log(a);
+        }
+
     });
 
 })();
