@@ -11,18 +11,18 @@
 
 (() => {
     const birds = [
-        {name: "mouette", fem: true},
-        {name: "corbeau"},
-        {name: "mésange", fem: true},
-        {name: "hibou"},
-        {name: "buse", fem: true},
-        {name: "pigeon"},
-        {name: "pie", fem: true},
-        {name: "vautour"},
-        {name: "faucon"},
-        {name: "rouge-gorge"},
-        {name: "tourterelle", fem: true},
-        {name: "corneille", fem: true},
+        { name: "mouette", fem: true },
+        { name: "corbeau" },
+        { name: "mésange", fem: true },
+        { name: "hibou" },
+        { name: "buse", fem: true },
+        { name: "pigeon" },
+        { name: "pie", fem: true },
+        { name: "vautour" },
+        { name: "faucon" },
+        { name: "rouge-gorge" },
+        { name: "tourterelle", fem: true },
+        { name: "corneille", fem: true },
     ];
     const adjectives = new Set([
         "cendré",
@@ -38,5 +38,19 @@
         "arboré",
     ]);
 
-    // your code here
+    const adjectivesArr = Array.from(adjectives);
+
+    document.getElementById('run').addEventListener('click', function() {
+
+        let randomBird = birds[Math.floor(Math.random() * birds.length)];
+        let randomAdj = adjectivesArr[Math.floor(Math.random() * adjectivesArr.length)];
+
+        if (randomBird.fem == true) {
+            document.getElementById("target").innerHTML = `La ${randomBird.name} ${randomAdj}e`;
+
+        } else {
+            document.getElementById("target").innerHTML = `Le ${randomBird.name} ${randomAdj}`;
+        }
+
+    });
 })();
