@@ -12,5 +12,12 @@
 (() => {
     const keys = ["name", "species", "age", "gender", "color"];
     const values = ["Skitty", "cat", 9, "female", "tabby"];
-    // your code here
+    let Arrays = keys.map(function(value, index) {
+        return [keys[index], values[index]];
+    });
+
+    document.getElementById('run').addEventListener('click', function() {
+        const obj = Object.fromEntries(Arrays);
+        console.log(obj);
+    });
 })();
