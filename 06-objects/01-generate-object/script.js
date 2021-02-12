@@ -13,7 +13,7 @@
 
 
     document.getElementById("run").addEventListener("click", function() {
-        emp = { firstname: "William", lastname: "Williamson" }
+        const emp = { firstname: "William", lastname: "Williamson" }
         console.log(emp.firstname + " " + emp.lastname);
     });
 })();
