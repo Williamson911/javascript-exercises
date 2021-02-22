@@ -11,6 +11,6 @@
 
 (function() {
 
-    // your code here
-
+    let elt = document.getElementById('target');
+    elt.textContent = "owned";
 })();
