@@ -11,6 +11,7 @@
 
 (function() {
 
-    // your code here
+    let elt = document.querySelector("#target");
+    elt.textContent = "owned";
 
 })();
