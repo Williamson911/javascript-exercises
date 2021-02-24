@@ -10,5 +10,17 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+
+    document.getElementById("run").addEventListener("click", () => {
+
+        const personsPromise = window.lib.getPersons();
+
+        personsPromise.catch((value) => {
+            console.error(value);
+        });
+        personsPromise.then((value) => {
+            console.log(value);
+        });
+    });
+
 })();
