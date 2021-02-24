@@ -10,5 +10,24 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+
+        const postsPromise = window.lib.getPosts();
+
+        postsPromise.catch((postsValue) => {
+            console.error(postsValue);
+        });
+        postsPromise.then((postsValue) => {
+            let total = 0;
+            Promise.all(postsValue.map((post) => window.lib.getComments(post.id)))
+                .then((commentsArray) => {
+                    commentsArray.forEach((comments) => {
+                        postsValue[total++].comments = comments;
+                        if (total === postsValue.length) {
+                            console.log(postsValue);
+                        }
+                    });
+                });
+        });
+    });
 })();
