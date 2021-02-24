@@ -8,7 +8,29 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
-
 (() => {
-    // your code here
+
+    document.getElementById("run").addEventListener("click", () => {
+        let i = 0;
+        window.lib.getPosts((error, articles) => {
+            if (error) {
+                console.error(error);
+            } else {
+                articles.forEach((article) => {
+                    window.lib.getComments(article.id, (error, comments) => {
+                        if (error) {
+                            console.error(error);
+                        } else {
+                            article.comments = comments;
+                        }
+                        if (++i === articles.length) {
+                            console.log(articles);
+                        }
+                    });
+                });
+            }
+        });
+
+    });
+
 })();
