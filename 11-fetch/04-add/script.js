@@ -10,5 +10,40 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    async function getHero() {
+        try {
+            const hero = await fetch('http://localhost:3000/heroes');
+            const data = await hero.json();
+            return data;
+        } catch (error) {
+            console.error(error);
+        };
+    }
+
+    let array = getHero();
+
+    document.getElementById('run').addEventListener('click', function() {
+        function newHero(data) {
+            const nameInput = document.querySelector('#hero-name').value;
+            const alterEgo = document.querySelector('#hero-alter-ego').value;
+            const power = document.querySelector('#hero-powers').value;
+
+            if (nameInput.length != 0 && alterEgo.length != 0 && power.length != 0) {
+                data.push({
+                    'id': data.length + 1,
+                    'name': nameInput,
+                    'alterEgo': alterEgo,
+                    'powers': [power]
+                });
+            } else {
+                alert('there seems to be an empty input');
+            }
+
+        };
+
+        array.then(data => {
+            newHero(data);
+            console.log(data);
+        })
+    });
 })();
